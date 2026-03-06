@@ -895,7 +895,7 @@ async function loadAngPage(){
   const sk=currentUser.role==='jemaat'?(document.getElementById('flt-sk-ang')||{}).value||'':'';
   const un=(document.getElementById('flt-unit-ang')||{}).value||'';
   const jk=(document.getElementById('flt-jk-ang')||{}).value||'';
-  let params='order=sektor.asc,unit.asc,nama.asc';
+  let params='order=sektor.asc,unit.asc,nama_kk.asc,nama.asc';
   if(currentUser.role==='sektor') params+=`&sektor=eq.${currentUser.sektor}`;
   if(sk) params+=`&sektor=eq.${sk}`;
   if(un) params+=`&unit=eq.${un}`;
@@ -907,6 +907,19 @@ async function loadAngPage(){
   const cnt=document.getElementById('ang-cnt');
   if(cnt) cnt.textContent=`(${total} data)`;
   if(!data||!data.length){if(tbody)tbody.innerHTML='<tr><td colspan="9"><div class="empty"><div class="empty-icon">📭</div>Tidak ada data</div></td></tr>';return;}
+  // Sort: KK first, then Istri, Anak, Cucu, Lainnya within same nama_kk
+  const stOrder={'Kepala Keluarga':0,'Istri':1,'Anak':2,'Cucu':3,'Lainnya':4};
+  data.sort((a,b)=>{
+    if(a.nama_kk!==b.nama_kk) return 0;
+    return (stOrder[a.status_keluarga]??5)-(stOrder[b.status_keluarga]??5);
+  });
+  // Sort: KK first, then Istri, Anak, Cucu within same KK
+  const stOrd={'Kepala Keluarga':0,'Istri':1,'Anak':2,'Cucu':3,'Lainnya':4};
+  if(data) data.sort((a,b)=>{
+    const kkCmp=(a.nama_kk||'').localeCompare(b.nama_kk||'');
+    if(kkCmp!==0) return kkCmp;
+    return (stOrd[a.status_keluarga]??5)-(stOrd[b.status_keluarga]??5);
+  });
   if(tbody) tbody.innerHTML=data.map((d,i)=>`<tr>
     <td style="color:#9CA3AF;font-size:11px">${(currentPage-1)*PER_PAGE+i+1}</td>
     <td><div class="nm-cell"><div class="av" style="background:${getClr(d.nama)}">${getInit(d.nama)}</div><div><div class="nm">${d.nama}</div><div class="nm-sub">KK: ${d.nama_kk||'-'}</div></div></div></td>
@@ -990,6 +1003,12 @@ async function loadMutPage(jenis){
   const cnt=document.getElementById('mut-cnt');
   if(cnt) cnt.textContent=`(${total} data)`;
   if(!data||!data.length){if(tbody)tbody.innerHTML=`<tr><td colspan="8"><div class="empty"><div class="empty-icon">📭</div>Belum ada data ${jenis}</div></td></tr>`;return;}
+  // Sort: KK first, then Istri, Anak, Cucu, Lainnya within same nama_kk
+  const stOrder={'Kepala Keluarga':0,'Istri':1,'Anak':2,'Cucu':3,'Lainnya':4};
+  data.sort((a,b)=>{
+    if(a.nama_kk!==b.nama_kk) return 0;
+    return (stOrder[a.status_keluarga]??5)-(stOrder[b.status_keluarga]??5);
+  });
   if(tbody) tbody.innerHTML=data.map((d,i)=>`<tr>
     <td style="color:#9CA3AF;font-size:11px">${(currentPage-1)*PER_PAGE+i+1}</td>
     <td><div class="nm-cell"><div class="av" style="background:${getClr(d.nama)}">${getInit(d.nama)}</div><div><div class="nm">${d.nama}</div><div class="nm-sub">KK: ${d.nama_kk||'-'}</div></div></div></td>
