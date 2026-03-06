@@ -418,20 +418,36 @@ tbody td{padding:9px 12px;vertical-align:middle}
       <div class="mfield"><label class="mlbl">Disabilitas</label>
         <select class="msel" id="ma-dis"><option>Tidak Disabilitas</option><option>Disabilitas Fisik</option><option>Disabilitas Mental</option><option>Lainnya</option></select>
       </div>
-      <div class="mfield full"><label class="mlbl">Aparatur Penggerak Pelayanan</label>
-        <select class="msel" id="ma-ap">
-          <option value="">Pilih Jabatan</option>
-          <option>Tidak Ada</option><option>Anggota Jemaat</option><option>Penatua</option><option>Diaken</option>
-          <option>Pendeta/Penginjil</option><option>Pdt/PJL Domisili</option><option>Tuagama</option>
-          <option>Koordinator Unit</option><option>Pengajar Katekisasi (Katekeit)</option><option>Pengasuh SMTPI</option>
-          <option>Kantoria</option><option>Tim Musik Gereja</option><option>Keyboard</option>
-          <option>Operator Multimedia</option><option>PS</option><option>Kolektaan</option>
-          <option>Panitia</option><option>Tim Renstra</option><option>Tim Data Jemaat</option>
-          <option>PC AMGPM</option><option>PR AMGPM</option><option>Pengurus Kemitraan</option>
-          <option>Komisi Kemitraan Unsur Laki-Laki (Jemaat)</option>
-          <option>Wadah Pelayanan Laki2 Jmt</option><option>Wadah Pelayanan Laki2 Sektor</option>
-          <option>Wadah Pelayanan Perempuan Sektor</option>
-        </select>
+      <div class="mfield full">
+        <label class="mlbl">Aparatur Penggerak Pelayanan <span style="color:#9CA3AF;font-size:10px">(bisa pilih lebih dari 1)</span></label>
+        <div id="ma-ap-wrap" style="border:1.5px solid var(--border);border-radius:8px;padding:10px;max-height:180px;overflow-y:auto;display:grid;grid-template-columns:1fr 1fr;gap:6px">
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Tidak Ada" style="width:13px;height:13px;cursor:pointer"/>Tidak Ada</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Anggota Jemaat" style="width:13px;height:13px;cursor:pointer"/>Anggota Jemaat</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Penatua" style="width:13px;height:13px;cursor:pointer"/>Penatua</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Diaken" style="width:13px;height:13px;cursor:pointer"/>Diaken</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Pendeta/Penginjil" style="width:13px;height:13px;cursor:pointer"/>Pendeta/Penginjil</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Pdt/PJL Domisili" style="width:13px;height:13px;cursor:pointer"/>Pdt/PJL Domisili</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Tuagama" style="width:13px;height:13px;cursor:pointer"/>Tuagama</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Koordinator Unit" style="width:13px;height:13px;cursor:pointer"/>Koordinator Unit</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Pengajar Katekisasi (Katekeit)" style="width:13px;height:13px;cursor:pointer"/>Pengajar Katekisasi (Katekeit)</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Pengasuh SMTPI" style="width:13px;height:13px;cursor:pointer"/>Pengasuh SMTPI</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Kantoria" style="width:13px;height:13px;cursor:pointer"/>Kantoria</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Tim Musik Gereja" style="width:13px;height:13px;cursor:pointer"/>Tim Musik Gereja</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Keyboard" style="width:13px;height:13px;cursor:pointer"/>Keyboard</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Operator Multimedia" style="width:13px;height:13px;cursor:pointer"/>Operator Multimedia</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="PS" style="width:13px;height:13px;cursor:pointer"/>PS</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Kolektaan" style="width:13px;height:13px;cursor:pointer"/>Kolektaan</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Panitia" style="width:13px;height:13px;cursor:pointer"/>Panitia</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Tim Renstra" style="width:13px;height:13px;cursor:pointer"/>Tim Renstra</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Tim Data Jemaat" style="width:13px;height:13px;cursor:pointer"/>Tim Data Jemaat</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="PC AMGPM" style="width:13px;height:13px;cursor:pointer"/>PC AMGPM</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="PR AMGPM" style="width:13px;height:13px;cursor:pointer"/>PR AMGPM</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Pengurus Kemitraan" style="width:13px;height:13px;cursor:pointer"/>Pengurus Kemitraan</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Komisi Kemitraan Unsur Laki-Laki (Jemaat)" style="width:13px;height:13px;cursor:pointer"/>Komisi Kemitraan Unsur Laki-Laki (Jemaat)</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Wadah Pelayanan Laki2 Jmt" style="width:13px;height:13px;cursor:pointer"/>Wadah Pelayanan Laki2 Jmt</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Wadah Pelayanan Laki2 Sektor" style="width:13px;height:13px;cursor:pointer"/>Wadah Pelayanan Laki2 Sektor</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Wadah Pelayanan Perempuan Sektor" style="width:13px;height:13px;cursor:pointer"/>Wadah Pelayanan Perempuan Sektor</label>
+        </div>
       </div>
     </div>
     <div class="modal-ftr"><button class="btn btn-outline" onclick="closeModal('modal-anggota')">Batal</button><button class="btn btn-blue" onclick="saveAnggota()">💾 Simpan</button></div>
@@ -1528,10 +1544,14 @@ async function openModalAnggota(mode,id){
       document.getElementById('ma-sakra').value=d.sakramental||'';
       document.getElementById('ma-pmks').value=d.status_sosial||'';
       document.getElementById('ma-dis').value=d.disabilitas||'';
-      document.getElementById('ma-ap').value=d.aparatur||'';
+      // Set aparatur checkboxes
+      document.querySelectorAll('.ap-cb').forEach(cb=>cb.checked=false);
+      const apVals=(d.aparatur||'').split(',').map(s=>s.trim());
+      document.querySelectorAll('.ap-cb').forEach(cb=>{if(apVals.includes(cb.value))cb.checked=true;});
     }
   }else{
     ['ma-nama','ma-namakk','ma-tl','ma-tgl','ma-bln','ma-thn','ma-kerja','ma-kerja2'].forEach(id=>document.getElementById(id).value='');
+    document.querySelectorAll('.ap-cb').forEach(cb=>cb.checked=false);
     if(currentUser.role==='sektor'){document.getElementById('ma-sektor').value=currentUser.sektor;updateUnitDrop('ma-unit','ma-sektor');}
   }
   openModal('modal-anggota');
