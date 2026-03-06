@@ -199,6 +199,15 @@ tbody td{padding:9px 12px;vertical-align:middle}
 .report-item .r-icon{font-size:20px;flex-shrink:0}
 .report-item .r-text{font-size:12px;font-weight:500}
 
+/* APARATUR */
+.ap-option{display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:4px 6px;border-radius:5px;transition:background .15s}
+.ap-option:hover{background:#F0F2F7}
+.ap-option input{width:13px;height:13px;cursor:pointer;accent-color:var(--blue)}
+.ap-cat{display:contents}
+.ap-tag{display:inline-flex;align-items:center;gap:4px;background:#DBEAFE;color:#1E40AF;border-radius:99px;font-size:11px;font-weight:600;padding:2px 8px 2px 10px;white-space:nowrap}
+.ap-tag-x{cursor:pointer;font-size:13px;line-height:1;color:#1E40AF;opacity:.6;transition:opacity .15s}
+.ap-tag-x:hover{opacity:1}
+
 /* LOADING / EMPTY / TOAST */
 .loading{display:flex;align-items:center;justify-content:center;padding:40px;color:#9CA3AF;font-size:13px;gap:10px}
 .spinner{width:20px;height:20px;border:2px solid #E5E7EB;border-top-color:var(--blue);border-radius:50%;animation:spin .8s linear infinite;flex-shrink:0}
@@ -420,33 +429,60 @@ tbody td{padding:9px 12px;vertical-align:middle}
       </div>
       <div class="mfield full">
         <label class="mlbl">Aparatur Penggerak Pelayanan <span style="color:#9CA3AF;font-size:10px">(bisa pilih lebih dari 1)</span></label>
-        <div id="ma-ap-wrap" style="border:1.5px solid var(--border);border-radius:8px;padding:10px;max-height:180px;overflow-y:auto;display:grid;grid-template-columns:1fr 1fr;gap:6px">
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Tidak Ada" style="width:13px;height:13px;cursor:pointer"/>Tidak Ada</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Anggota Jemaat" style="width:13px;height:13px;cursor:pointer"/>Anggota Jemaat</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Penatua" style="width:13px;height:13px;cursor:pointer"/>Penatua</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Diaken" style="width:13px;height:13px;cursor:pointer"/>Diaken</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Pendeta/Penginjil" style="width:13px;height:13px;cursor:pointer"/>Pendeta/Penginjil</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Pdt/PJL Domisili" style="width:13px;height:13px;cursor:pointer"/>Pdt/PJL Domisili</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Tuagama" style="width:13px;height:13px;cursor:pointer"/>Tuagama</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Koordinator Unit" style="width:13px;height:13px;cursor:pointer"/>Koordinator Unit</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Pengajar Katekisasi (Katekeit)" style="width:13px;height:13px;cursor:pointer"/>Pengajar Katekisasi (Katekeit)</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Pengasuh SMTPI" style="width:13px;height:13px;cursor:pointer"/>Pengasuh SMTPI</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Kantoria" style="width:13px;height:13px;cursor:pointer"/>Kantoria</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Tim Musik Gereja" style="width:13px;height:13px;cursor:pointer"/>Tim Musik Gereja</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Keyboard" style="width:13px;height:13px;cursor:pointer"/>Keyboard</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Operator Multimedia" style="width:13px;height:13px;cursor:pointer"/>Operator Multimedia</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="PS" style="width:13px;height:13px;cursor:pointer"/>PS</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Kolektaan" style="width:13px;height:13px;cursor:pointer"/>Kolektaan</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Panitia" style="width:13px;height:13px;cursor:pointer"/>Panitia</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Tim Renstra" style="width:13px;height:13px;cursor:pointer"/>Tim Renstra</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Tim Data Jemaat" style="width:13px;height:13px;cursor:pointer"/>Tim Data Jemaat</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="PC AMGPM" style="width:13px;height:13px;cursor:pointer"/>PC AMGPM</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="PR AMGPM" style="width:13px;height:13px;cursor:pointer"/>PR AMGPM</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Pengurus Kemitraan" style="width:13px;height:13px;cursor:pointer"/>Pengurus Kemitraan</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Komisi Kemitraan Unsur Laki-Laki (Jemaat)" style="width:13px;height:13px;cursor:pointer"/>Komisi Kemitraan Unsur Laki-Laki (Jemaat)</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Wadah Pelayanan Laki2 Jmt" style="width:13px;height:13px;cursor:pointer"/>Wadah Pelayanan Laki2 Jmt</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Wadah Pelayanan Laki2 Sektor" style="width:13px;height:13px;cursor:pointer"/>Wadah Pelayanan Laki2 Sektor</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;padding:3px 4px;border-radius:4px"><input type="checkbox" class="ap-cb" value="Wadah Pelayanan Perempuan Sektor" style="width:13px;height:13px;cursor:pointer"/>Wadah Pelayanan Perempuan Sektor</label>
+        <!-- Tag display area -->
+        <div id="ap-tags" style="min-height:36px;border:1.5px solid var(--border);border-radius:8px 8px 0 0;padding:6px 8px;display:flex;flex-wrap:wrap;gap:5px;background:#FAFAFA;border-bottom:none">
+          <span id="ap-placeholder" style="font-size:12px;color:#9CA3AF;line-height:24px">Belum ada yang dipilih...</span>
+        </div>
+        <!-- Dropdown kategori -->
+        <div style="border:1.5px solid var(--border);border-radius:0 0 8px 8px;overflow:hidden">
+          <select class="msel" id="ap-kategori-sel" style="border-radius:0;border:none;border-bottom:1px solid var(--border);width:100%;background:#F8FAFC;font-weight:600;font-size:12px" onchange="apShowKategori(this.value)">
+            <option value="">— Pilih Kategori Aparatur —</option>
+            <option value="umum">📋 Umum</option>
+            <option value="majelis">⛪ Majelis Jemaat</option>
+            <option value="pelayanan">🎵 Pelayanan Ibadah</option>
+            <option value="komisi">📌 Komisi & Tim</option>
+            <option value="organisasi">🤝 Organisasi & Kemitraan</option>
+          </select>
+          <!-- Sub-list per kategori -->
+          <div id="ap-list-wrap" style="max-height:180px;overflow-y:auto;padding:8px;display:grid;grid-template-columns:1fr 1fr;gap:5px">
+            <div id="ap-cat-umum" class="ap-cat hidden">
+              <label class="ap-option"><input type="checkbox" class="ap-cb" value="Tidak Ada"/>Tidak Ada</label>
+              <label class="ap-option"><input type="checkbox" class="ap-cb" value="Anggota Jemaat"/>Anggota Jemaat</label>
+            </div>
+            <div id="ap-cat-majelis" class="ap-cat hidden">
+              <label class="ap-option"><input type="checkbox" class="ap-cb" value="Penatua"/>Penatua</label>
+              <label class="ap-option"><input type="checkbox" class="ap-cb" value="Diaken"/>Diaken</label>
+              <label class="ap-option"><input type="checkbox" class="ap-cb" value="Pendeta/Penginjil"/>Pendeta/Penginjil</label>
+              <label class="ap-option"><input type="checkbox" class="ap-cb" value="Pdt/PJL Domisili"/>Pdt/PJL Domisili</label>
+              <label class="ap-option"><input type="checkbox" class="ap-cb" value="Tuagama"/>Tuagama</label>
+              <label class="ap-option"><input type="checkbox" class="ap-cb" value="Koordinator Unit"/>Koordinator Unit</label>
+              <label class="ap-option"><input type="checkbox" class="ap-cb" value="Pengajar Katekisasi (Katekeit)"/>Pengajar Katekisasi (Katekeit)</label>
+              <label class="ap-option"><input type="checkbox" class="ap-cb" value="Pengasuh SMTPI"/>Pengasuh SMTPI</label>
+            </div>
+            <div id="ap-cat-pelayanan" class="ap-cat hidden">
+              <label class="ap-option"><input type="checkbox" class="ap-cb" value="Kantoria"/>Kantoria</label>
+              <label class="ap-option"><input type="checkbox" class="ap-cb" value="Tim Musik Gereja"/>Tim Musik Gereja</label>
+              <label class="ap-option"><input type="checkbox" class="ap-cb" value="Keyboard"/>Keyboard</label>
+              <label class="ap-option"><input type="checkbox" class="ap-cb" value="Operator Multimedia"/>Operator Multimedia</label>
+              <label class="ap-option"><input type="checkbox" class="ap-cb" value="PS"/>PS</label>
+              <label class="ap-option"><input type="checkbox" class="ap-cb" value="Kolektaan"/>Kolektaan</label>
+              <label class="ap-option"><input type="checkbox" class="ap-cb" value="Panitia"/>Panitia</label>
+            </div>
+            <div id="ap-cat-komisi" class="ap-cat hidden">
+              <label class="ap-option"><input type="checkbox" class="ap-cb" value="Tim Renstra"/>Tim Renstra</label>
+              <label class="ap-option"><input type="checkbox" class="ap-cb" value="Tim Data Jemaat"/>Tim Data Jemaat</label>
+            </div>
+            <div id="ap-cat-organisasi" class="ap-cat hidden">
+              <label class="ap-option"><input type="checkbox" class="ap-cb" value="PC AMGPM"/>PC AMGPM</label>
+              <label class="ap-option"><input type="checkbox" class="ap-cb" value="PR AMGPM"/>PR AMGPM</label>
+              <label class="ap-option"><input type="checkbox" class="ap-cb" value="Pengurus Kemitraan"/>Pengurus Kemitraan</label>
+              <label class="ap-option"><input type="checkbox" class="ap-cb" value="Komisi Kemitraan Unsur Laki-Laki (Jemaat)"/>Komisi Kemitraan Unsur Laki-Laki (Jemaat)</label>
+              <label class="ap-option"><input type="checkbox" class="ap-cb" value="Wadah Pelayanan Laki2 Jmt"/>Wadah Pelayanan Laki2 Jmt</label>
+              <label class="ap-option"><input type="checkbox" class="ap-cb" value="Wadah Pelayanan Laki2 Sektor"/>Wadah Pelayanan Laki2 Sektor</label>
+              <label class="ap-option"><input type="checkbox" class="ap-cb" value="Wadah Pelayanan Perempuan Sektor"/>Wadah Pelayanan Perempuan Sektor</label>
+            </div>
+            <div id="ap-empty-hint" style="grid-column:1/-1;text-align:center;padding:20px;color:#9CA3AF;font-size:12px">👆 Pilih kategori di atas untuk melihat pilihan aparatur</div>
+          </div>
         </div>
       </div>
     </div>
@@ -1548,10 +1584,11 @@ async function openModalAnggota(mode,id){
       document.querySelectorAll('.ap-cb').forEach(cb=>cb.checked=false);
       const apVals=(d.aparatur||'').split(',').map(s=>s.trim());
       document.querySelectorAll('.ap-cb').forEach(cb=>{if(apVals.includes(cb.value))cb.checked=true;});
+      apUpdateTags();
     }
   }else{
     ['ma-nama','ma-namakk','ma-tl','ma-tgl','ma-bln','ma-thn','ma-kerja','ma-kerja2'].forEach(id=>document.getElementById(id).value='');
-    document.querySelectorAll('.ap-cb').forEach(cb=>cb.checked=false);
+    apResetAll();
     if(currentUser.role==='sektor'){document.getElementById('ma-sektor').value=currentUser.sektor;updateUnitDrop('ma-unit','ma-sektor');}
   }
   openModal('modal-anggota');
@@ -1561,7 +1598,7 @@ async function saveAnggota(){
   const sektor=document.getElementById('ma-sektor').value;
   const unit=document.getElementById('ma-unit').value;
   if(!nama||!sektor||!unit){showToast('⚠️','Nama, Sektor dan Unit wajib diisi!');return;}
-  const obj={nama,sektor,unit,nama_kk:document.getElementById('ma-namakk').value,status_keluarga:document.getElementById('ma-stk').value,jenis_kelamin:document.getElementById('ma-jk').value,tempat_lahir:document.getElementById('ma-tl').value,tgl_lahir:document.getElementById('ma-tgl').value,bln_lahir:document.getElementById('ma-bln').value,thn_lahir:document.getElementById('ma-thn').value,gol_darah:document.getElementById('ma-gd').value,pendidikan:document.getElementById('ma-pend').value,domisili:document.getElementById('ma-dom').value,pekerjaan_pokok:document.getElementById('ma-kerja').value,pekerjaan_tambahan:document.getElementById('ma-kerja2').value,sakramental:document.getElementById('ma-sakra').value,status_sosial:document.getElementById('ma-pmks').value,disabilitas:document.getElementById('ma-dis').value,aparatur:document.getElementById('ma-ap').value};
+  const obj={nama,sektor,unit,nama_kk:document.getElementById('ma-namakk').value,status_keluarga:document.getElementById('ma-stk').value,jenis_kelamin:document.getElementById('ma-jk').value,tempat_lahir:document.getElementById('ma-tl').value,tgl_lahir:document.getElementById('ma-tgl').value,bln_lahir:document.getElementById('ma-bln').value,thn_lahir:document.getElementById('ma-thn').value,gol_darah:document.getElementById('ma-gd').value,pendidikan:document.getElementById('ma-pend').value,domisili:document.getElementById('ma-dom').value,pekerjaan_pokok:document.getElementById('ma-kerja').value,pekerjaan_tambahan:document.getElementById('ma-kerja2').value,sakramental:document.getElementById('ma-sakra').value,status_sosial:document.getElementById('ma-pmks').value,disabilitas:document.getElementById('ma-dis').value,aparatur:[...document.querySelectorAll('.ap-cb:checked')].map(cb=>cb.value).join(', ')||'Tidak Ada'};
   try{
     if(editAngId)await sbPatch('anggota',editAngId,obj);else await sbPost('anggota',obj);
     closeModal('modal-anggota');showToast('✅',editAngId?'Data diperbarui!':'Data ditambahkan!');
@@ -1703,6 +1740,41 @@ function exportReportExcel(data){
   XLSX.writeFile(wb,'Report_Jemaat.xlsx');showToast('📊','Export berhasil!');
 }
 
+// ===== APARATUR DROPDOWN =====
+function apShowKategori(val){
+  document.querySelectorAll('.ap-cat').forEach(d=>d.classList.add('hidden'));
+  document.getElementById('ap-empty-hint').classList.toggle('hidden',!!val);
+  if(val){
+    const el=document.getElementById('ap-cat-'+val);
+    if(el){el.classList.remove('hidden');}
+  }
+}
+function apUpdateTags(){
+  const wrap=document.getElementById('ap-tags');
+  const ph=document.getElementById('ap-placeholder');
+  const checked=[...document.querySelectorAll('.ap-cb:checked')];
+  wrap.querySelectorAll('.ap-tag').forEach(t=>t.remove());
+  if(checked.length===0){ph.style.display='';return;}
+  ph.style.display='none';
+  checked.forEach(cb=>{
+    const tag=document.createElement('span');
+    tag.className='ap-tag';
+    tag.innerHTML=`${cb.value}<span class="ap-tag-x" onclick="apRemoveTag('${cb.value}')">×</span>`;
+    wrap.appendChild(tag);
+  });
+}
+function apRemoveTag(val){
+  const cb=document.querySelector(`.ap-cb[value="${val}"]`);
+  if(cb){cb.checked=false;}
+  apUpdateTags();
+}
+function apResetAll(){
+  document.querySelectorAll('.ap-cb').forEach(cb=>cb.checked=false);
+  document.getElementById('ap-kategori-sel').value='';
+  apShowKategori('');
+  apUpdateTags();
+}
+
 // ===== HELPERS =====
 function updateUnitDrop(unitId,sektorId){
   const s=document.getElementById(sektorId)?.value||'';
@@ -1740,6 +1812,11 @@ function showToast(icon,msg){
 }
 function goReport(type){goPage('report');setTimeout(()=>showReport(type),200);}
 function goRenstra(type){goPage('renstra');setTimeout(()=>showRenstra(type),200);}
+
+// Aparatur checkbox event delegation
+document.addEventListener('change',function(e){
+  if(e.target.classList.contains('ap-cb'))apUpdateTags();
+});
 
 // Close modals on overlay click
 ['modal-kk','modal-anggota','modal-hapus','modal-meninggal','modal-mutasi'].forEach(id=>{
